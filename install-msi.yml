@@ -1,0 +1,15 @@
+---
+- name: Install PowerBI Desktop from an MSI 
+  hosts: all 
+ 
+  tasks:
+    - name: Download the PowerBI Installer
+      win_get_url:
+        url: 'https://download.microsoft.com/download/8/8/0/880BCA75-79DD-466A-927D-1ABF1F5454B0/PBIDesktopSetup_x64.exe'
+        dest: 'C:\Downloads\PBIDesktopSetup_x64.exe'
+
+    - name: Install MSI
+      win_package: 
+        path: 'C:\Downloads\PBIDesktopSetup_x64.exe'
+        state: present
+        
