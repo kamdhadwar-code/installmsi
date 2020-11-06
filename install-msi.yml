@@ -1,4 +1,4 @@
-- name: Install PowerBI Desktop - task: PowerShellOnTargetMachines@3
+name: Install PowerBI Desktop - task: PowerShellOnTargetMachines@3
   inputs:
     Machines: '10.10.4.4, 10.10.4.5'
     UserName: 'adm.kamdhadwar@comnio.global'
