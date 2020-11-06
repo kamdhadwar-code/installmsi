@@ -1,15 +1,9 @@
----
-- name: Install PowerBI Desktop from an MSI 
-  hosts: all 
- 
-  tasks:
-    - name: Download the PowerBI Installer
-      win_get_url:
-        url: 'https://download.microsoft.com/download/8/8/0/880BCA75-79DD-466A-927D-1ABF1F5454B0/PBIDesktopSetup_x64.exe'
-        dest: 'C:\Downloads\PBIDesktopSetup_x64.exe'
+- name: Install PowerBI Desktop - task: PowerShellOnTargetMachines@3
+  inputs:
+    Machines: '10.10.4.4, 10.10.4.5'
+    UserName: 'adm.kamdhadwar@comnio.global'
+    UserPassword: 'Kd448766!!??'
+    ScriptType: 'FilePath'
+    ScriptPath: '\\stdstoreomnioglobal.file.core.windows.net\vdi\Applications\PowerBI.ps1'
 
-    - name: Install MSI
-      win_package: 
-        path: 'C:\Downloads\PBIDesktopSetup_x64.exe'
-        state: present
         
